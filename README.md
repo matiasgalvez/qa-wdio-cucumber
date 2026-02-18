@@ -5,7 +5,7 @@
 
 ## 📌 Overview
 
-This project is an end-to-end (E2E) test automation framework built to validate core user flows of the ![SauceDemo web application](https://www.saucedemo.com/).
+This project is an end-to-end (E2E) test automation framework built to validate core user flows of the [SauceDemo web application](https://www.saucedemo.com/).
 
 The framework follows modern automation engineering best practices:
 
