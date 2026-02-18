@@ -1,8 +1,11 @@
+![WebdriverIO](https://img.shields.io/badge/WebdriverIO-Automation-orange)
+![Cucumber](https://img.shields.io/badge/Cucumber-BDD-brightgreen)
+![Allure](https://img.shields.io/badge/Reporting-Allure-blue)
 # 🧪 QA WebdriverIO + Cucumber Automation Framework
 
 ## 📌 Overview
 
-This project is an end-to-end (E2E) test automation framework built to validate core user flows of the SauceDemo web application by **:contentReference[oaicite:0]{index=0}**.
+This project is an end-to-end (E2E) test automation framework built to validate core user flows of the ![SauceDemo web application](https://www.saucedemo.com/).
 
 The framework follows modern automation engineering best practices:
 
@@ -73,15 +76,41 @@ Allure enhances visibility and debugging efficiency.
 ---
 
 # 2️⃣ Project Structure
-
-
+````
+qa-wdio-cucumber/
+│
+├── test/
+│ ├── features/
+│ │ ├── login.feature
+│ │ ├── cart.feature
+│ │ ├── checkout.feature
+│
+│ ├── pageobjects/
+│ │ ├── login.page.js
+│ │ ├── inventory.page.js
+│ │ ├── cart.page.js
+│ │ ├── checkout.page.js
+│ │ ├── page.js
+│ │
+│ ├── step-definitions/
+│ │ └── steps.js
+│ │
+│ ├── support/
+│ │ └── hooks.js
+│
+├── .env.qa
+├── .env.staging
+├── wdio.conf.js
+├── package.json
+└── README.md
+````
 ---
 
 # 3️⃣ Scenarios Automated & Rationale
 
-## ✅ 1. Login Scenarios
+## ✅ 1. Login
 
-### Automated:
+**Scenarios:**
 - Valid login
 - Invalid login
 
@@ -95,6 +124,12 @@ Allure enhances visibility and debugging efficiency.
 
 ## ✅ 2. Add to Cart
 
+**Scenario:**
+- Login
+- Add product to cart
+- Verify cart badge shows 1
+- Verify cart contains correct product
+
 **Reasoning:**
 - Core e-commerce functionality
 - Verifies product selection logic
@@ -104,7 +139,7 @@ Allure enhances visibility and debugging efficiency.
 
 ## ✅ 3. Full Checkout Flow (E2E)
 
-Scenario:
+**Scenario:**
 - Login
 - Add product to cart
 - Proceed to checkout
@@ -132,151 +167,91 @@ Each page contains:
 - Encapsulated logic
 
 Benefits:
+- Separation of concerns
+- Reusability
+- Easier maintenance
+- Cleaner step definitions
 
-Separation of concerns
-
-Reusability
-
-Easier maintenance
-
-Cleaner step definitions
-
-🔹 Step Definitions
+## 🔹 Step Definitions
 
 Contain:
+- Business logic
+- Page Object method calls
+- Assertions
 
-Business logic
-
-Page Object method calls
-
-Assertions
-
-🔹 Hooks
+## 🔹 Hooks
 
 Located in:
-
-test/support/hooks.js
-
+````test/support/hooks.js````
 
 Features:
+- Screenshot capture on failure
+- Allure attachment integration
+- Improves debugging and reporting quality.
 
-Screenshot capture on failure
+# 5️⃣ Environment Configuration
 
-Allure attachment integration
+I use dotenv-based environment management.
 
-Improves debugging and reporting quality.
-
-5️⃣ Environment Configuration
-
-We use dotenv-based environment management.
-
-.env.qa
+````
+In .env.qa
 BASE_URL=https://www.saucedemo.com
+````
 
-.env.staging
+````
+In .env.staging
 BASE_URL=https://staging.saucedemo.com
-
-
-In wdio.conf.js:
-
-require('dotenv').config({
-    path: `.env.${process.env.TEST_ENV || 'qa'}`
-});
-
-baseUrl: process.env.BASE_URL,
-
+(just an example to show environment configuration management)
+````
 
 This allows running tests against multiple environments without modifying test code.
 
-6️⃣ Installation & Setup
-✅ Prerequisites
+# 6️⃣ Installation & Setup
+## ✅ Prerequisites
 
-Node.js (v18+ recommended)
+- Node.js (v18+ recommended)
+- npm
+- Google Chrome installed
 
-npm
+## ✅ Install Dependencies
+````npm install````
 
-Google Chrome installed
+# 7️⃣ Running Tests
+## 🔹 Headful Mode against QA Environment (Visible Browser)
+````npm run test:qa:headful````
 
-✅ Install Dependencies
-npm install
+## 🔹 Headless Mode against QA Environment
+````npm run test:qa:headless````
 
-7️⃣ Running Tests
-🔹 Headful Mode against QA Environment (Visible Browser)
-npm run test:qa:headful
+# 8️⃣ Allure Reporting
+## 🔹 Generate Report
+````npm run allure:generate````
 
-🔹 Headless Mode against QA Environment
-npm run test:qa:headless
-
-8️⃣ Allure Reporting
-🔹 Generate Report
-npm run allure:generate
-
-🔹 Open Report
-npm run allure:open
+## 🔹 Open Report
+````npm run allure:open````
 
 
 Allure provides:
+- Step-by-step breakdown
+- Screenshot attachments
+- Failure stack traces
+- Execution duration
+- Scenario history
 
-Step-by-step breakdown
+# 9️⃣ Additional Features Implemented
 
-Screenshot attachments
+- Environment-based configuration
+- Headless configurable via environment variable
+- Screenshot on failure
+- Allure integration
+- Clean separation of test logic and framework logic
+- Cross-platform script support (Windows/Mac/Linux)
 
-Failure stack traces
+# 🔟 Possible Enhancements
 
-Execution duration
-
-Scenario history
-
-9️⃣ Additional Features Implemented
-
-Environment-based configuration
-
-Headless configurable via environment variable
-
-Screenshot on failure
-
-Allure integration
-
-Clean separation of test logic and framework logic
-
-Cross-platform script support (Windows/Mac/Linux)
-
-🔟 Possible Enhancements
-
-Parallel execution
-
-CI/CD pipeline integration
-
-Retry logic for flaky tests
-
-API test layer integration
-
-Docker container execution
-
-Test data factory pattern
-
-🎯 Summary
-
-This automation framework was designed with:
-
-Scalability
-
-Maintainability
-
-Clean architecture
-
-Enterprise-ready configuration
-
-Clear separation of concerns
-
-It demonstrates practical automation engineering skills, including:
-
-End-to-end flow validation
-
-BDD implementation
-
-Reporting integration
-
-Config-driven execution
-
-Structured, maintainable project design
+- Parallel execution
+- CI/CD pipeline integration
+- Retry logic for flaky tests
+- API test layer integration
+- Docker container execution
+- Test data factory pattern
