@@ -61,5 +61,5 @@ When('I finish the order', async () => {
 
 Then('I should see the order confirmation message', async () => {
     await expect(CheckoutPage.confirmationMsg)
-        .toHaveText('Thank you for your');
+        .toHaveText('Thank you for your order!');
 });
