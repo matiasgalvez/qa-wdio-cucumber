@@ -21,7 +21,7 @@ The framework follows modern automation engineering best practices:
 
 # 1️⃣ Technology Stack & Rationale
 
-## 🔹 Automation Framework: WebdriverIO
+## 🔹 Automation Framework: [WebdriverIO](https://webdriver.io/)
 
 **Why WebdriverIO?**
 
@@ -36,7 +36,7 @@ WebdriverIO provides a scalable and enterprise-ready browser automation solution
 
 ---
 
-## 🔹 Test Framework: Cucumber (BDD)
+## 🔹 Test Framework: [Cucumber (BDD)](https://cucumber.io/)
 
 **Why Cucumber?**
 
@@ -214,21 +214,26 @@ This allows running tests against multiple environments without modifying test c
 - Google Chrome installed
 
 ## ✅ Install Dependencies
+Clone repository.
 Standing in project root folder run:
 ````npm install````
 
 # 7️⃣ Running Tests
 ## 🔹 Headful Mode against QA Environment (Visible Browser)
+Standing in project root folder run:
 ````npm run test:qa:headful````
 
 ## 🔹 Headless Mode against QA Environment
+Standing in project root folder run:
 ````npm run test:qa:headless````
 
 # 8️⃣ Allure Reporting
 ## 🔹 Generate Report
+Standing in project root folder run:
 ````npm run allure:generate````
 
 ## 🔹 Open Report
+Standing in project root folder run:
 ````npm run allure:open````
 
 
