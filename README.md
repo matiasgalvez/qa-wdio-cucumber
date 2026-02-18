@@ -214,6 +214,7 @@ This allows running tests against multiple environments without modifying test c
 - Google Chrome installed
 
 ## ✅ Install Dependencies
+Standing in project root folder run:
 ````npm install````
 
 # 7️⃣ Running Tests
