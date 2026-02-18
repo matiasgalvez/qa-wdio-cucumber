@@ -62,7 +62,7 @@ Cucumber aligns automated tests with business requirements.
 
 ---
 
-## 🔹 Reporting: Allure
+## 🔹 Reporting: [Allure](https://allurereport.org/)
 
 **Why Allure?**
 
