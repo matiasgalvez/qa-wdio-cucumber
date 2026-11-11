@@ -1,3 +1,4 @@
+[![WebdriverIO Cucumber Tests](https://github.com/matiasgalvez/qa-wdio-cucumber/actions/workflows/wdio.yml/badge.svg)](https://github.com/matiasgalvez/qa-wdio-cucumber/actions/workflows/wdio.yml)
 ![WebdriverIO](https://img.shields.io/badge/WebdriverIO-Automation-orange)
 ![Cucumber](https://img.shields.io/badge/Cucumber-BDD-brightgreen)
 ![Allure](https://img.shields.io/badge/Reporting-Allure-blue)
