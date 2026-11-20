@@ -11,6 +11,9 @@ exports.config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
+    // Headless Chrome needs no display. WDIO's automatic xvfb-run wrapper breaks the
+    // worker IPC channel on Ubuntu 26.04 runners (write EINVAL), so skip it when headless.
+    autoXvfb: process.env.HEADLESS !== 'true',
     //
     // ==================
     // Specify Test Files
